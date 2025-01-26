@@ -27,14 +27,14 @@ const userSchema = new mongoose.Schema({
 });
 
 // Create model
-const User = mongoose.model("User", userSchema);
+const UserModel = mongoose.model("User", userSchema);
 
 // POST endpoint to save user data to MongoDB
 app.post("/submit", async (req, res) => {
   const { name, dob, email, phone } = req.body;
 
   try {
-    const newUser = new User({ name, dob, email, phone });
+    const newUser = new UserModel({ name, dob, email, phone });
     await newUser.save();
     res.status(201).json({ message: "User saved successfully!" });
   } catch (error) {

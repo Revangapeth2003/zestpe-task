@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
-import Fetch from "./Fetch";
 
 const App = () => {
   const [name, setName] = useState("");
